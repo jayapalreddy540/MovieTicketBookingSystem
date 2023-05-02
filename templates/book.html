@@ -1,0 +1,22 @@
+{% include 'header.html' %}
+<br/>
+<h4>Booking</h4>
+
+<br/>
+<div align-items="center">
+
+    <form enctype="multipart/form-data" method="post">
+        <input type="hidden" name="show_id" value="{{ show_id }}"/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">No of tickets</label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control col-6" name="tickets" required/>
+            </div>
+        </div>
+
+        <input type="submit" class="btn btn-primary" name="submit"/>
+    </form>
+</div>
+{% include 'footer.html' %}

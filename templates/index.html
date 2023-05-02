@@ -1,0 +1,26 @@
+{% include 'header.html' %}
+
+<div>
+    {% if session['isadmin'] %}
+        <br/>
+        <br/>
+        <div class="btn btn-warning"><a color="black" href="{{ url_for('movie.movies') }}">Movies </a></div><br/>
+        <br/>
+        <div class="btn btn-warning"><a href="{{ url_for('theatre.theatres') }}"> Theatres </a></div><br/>
+        <br/>
+        <div class="btn btn-warning"><a href="{{ url_for('show.shows') }}"> Shows </a></div><br/>
+    {% else %}
+        <br/><br/>
+        <div class="btn btn-warning" align-items="center"><a href="{{ url_for('movie.movies') }}">Browse Movies</a></div>
+        <br/><br/>
+        <div class="btn btn-warning" align-items="center"><a href="{{ url_for('show.shows') }}">Browse Shows</a></div>
+        <br/><br/>
+        {% if session['username'] %}
+        <div class="btn btn-warning" align-items="center"><a href="{{ url_for('bookings') }}">My Bookings</a></div>
+        {% endif %}
+
+    {% endif %}
+</div>
+</div>
+
+{% include 'footer.html' %}

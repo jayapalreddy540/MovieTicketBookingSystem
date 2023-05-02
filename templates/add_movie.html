@@ -1,0 +1,49 @@
+{% include 'header.html' %}
+<div align="center"><h1>Add Movie</h1></div>
+<br/>
+<br/>
+
+<div align-items="center">
+
+    <form enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Name</label>
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control col-6" name="name" required/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Description</label>
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control col-6" name="desc" required/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Language</label>
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control col-6" name="language" required/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Playtime (in Min)</label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control col-6" name="playtime" required/>
+            </div>
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-primary" name="submit"/>
+    </form>
+</div>
+
+{% include 'footer.html' %}

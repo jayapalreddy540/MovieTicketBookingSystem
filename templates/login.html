@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+    <div align="center">
+    <h4>Login</h4>
+        <br/>
+        <br/>
+    </div>
+    <div>
+<form enctype="multipart/form-data" method="post">
+    Username : <input class="form-control" type="text" name="username" required/>
+    Password : <input class="form-control" type="password" name="password" required/>
+    <br/>
+    User : <input type="radio" name="isadmin" value="user" />
+    Admin : <input type="radio" name="isadmin" value="admin">
+    <br/>
+    <br/>
+    <input class="btn btn-primary mb-3" type="submit" value="Login"/>
+</form>
+        </div>
+{% include 'footer.html' %}

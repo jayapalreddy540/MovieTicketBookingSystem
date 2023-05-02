@@ -1,0 +1,38 @@
+{% include 'header.html' %}
+<div align="center"><h1>Add Theatre</h1></div>
+<br/>
+<br/>
+
+<div align-items="center">
+    <form enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Name</label>
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control col-6" name="name" required/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label>Location</label>
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control col-6" name="location" required/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label>No of seats</label>
+            </div>
+            <div class="col-3">
+                <input type="number" class="form-control form-control-sm" name="num_seats"/>
+            </div>
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-primary" name="submit"/>
+    </form>
+</div>
+{% include 'footer.html' %}

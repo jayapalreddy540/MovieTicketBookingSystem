@@ -1,0 +1,76 @@
+{% include 'header.html' %}
+<div align="center"><h1>Add Show</h1></div>
+<br/>
+<br/>
+
+<div align-items="center">
+
+    <form enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Theatre</label>
+            </div>
+            <div class="col-3">
+                <select name="theatre">
+                    {% for t in data %}
+                        <option value="{{ t._id }}">{{ t.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Movie</label>
+            </div>
+            <div class="col-3">
+                <select name="movie">
+                    {% for m in movies %}
+                        <option value="{{ m._id }}">{{ m.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Date</label>
+            </div>
+            <div class="col-3">
+                <input type="date" class="form-control col-6" name="mdate" required/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Start Time</label>
+            </div>
+            <div class="col-3">
+                <input type="time" class="form-control col-6" name="start_time" required/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">End time</label>
+            </div>
+            <div class="col-3">
+                <input type="time" class="form-control col-6" name="end_time" required/>
+            </div>
+        </div>
+        <br/>
+
+        <div class="row">
+            <div class="col-3">
+                <label for="ex1">Ticket Price</label>
+            </div>
+            <div class="col-3">
+                <input type="number" step="0.01" class="form-control col-6" name="price" required/>
+            </div>
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-primary" name="submit"/>
+    </form>
+</div>
+
+{% include 'footer.html' %}

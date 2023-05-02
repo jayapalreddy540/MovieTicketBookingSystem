@@ -1,0 +1,52 @@
+{% include 'header.html' %}
+<br/>
+<h4>Schedule</h4>
+{% if session['isadmin'] %}
+    <a href="{{ url_for('show.add_show') }}" class="btn btn-primary">Add Show </a><br/>
+{% endif %}
+    <br/>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Theatre</th>
+            <th>Movie</th>
+            <th>date</th>
+        <th>start time</th>
+        <th>end time</th>
+            <th>total seats</th>
+            <th>available seats</th>
+            <th>price</th>
+            {% if not session['isadmin'] %}
+                <th></th>
+            {% else %}
+                <th></th>
+                <th></th>
+            {% endif %}
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in data %}
+            <tr>
+                <td>{{ item.theatre_name }}</td>
+                <td>{{ item.movie_name }}</td>
+                <td>{{ item.mdate }}</td>
+                <td>{{ item.start_time }}</td>
+                <td>{{ item.end_time }}</td>
+                <td>{{ item.total_seats }}</td>
+                <td>{{ item.available_seats }}</td>
+                <td>{{ item.price }}</td>
+                {% if session['isadmin'] %}
+                <td><a href="{{ url_for('show.edit_show') }}?id={{ item._id }}">edit </a></td>
+                <td><a href="{{ url_for('show.delete_show') }}?id={{ item._id }}">delete </a></td>
+                {% else %}
+                <td><a href="{{ url_for('book') }}?show_id={{ item._id }}">Book </a></td>
+            {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% include 'footer.html' %}

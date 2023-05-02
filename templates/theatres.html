@@ -1,0 +1,40 @@
+{% include 'header.html' %}
+<br/>
+<h4>Theatres</h4>
+        {% if session['isadmin'] %}
+
+<a href="{{ url_for('theatre.add_theatre') }}" class="btn btn-primary">Add Theatre </a><br/>
+{% endif %}
+<br/>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Hall</th>
+        <th>date</th>
+        <th>time</th>
+        {% if not session['isadmin'] %}
+            <th></th>
+        {% else %}
+            <th></th>
+            <th></th>
+        {% endif %}
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in data %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.location }}</td>
+            <td>{{ item.num_seats }}</td>
+            {% if not session['isadmin'] %}
+                <td><a href="{{ url_for('book') }}?id={{ item._id }}">book </a></td>
+            {% else %}
+                <td><a href="{{ url_for('theatre.edit_theatre') }}?id={{ item._id }}">edit </a></td>
+                <td><a href="{{ url_for('theatre.delete_theatre') }}?id={{ item._id }}">delete </a></td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html' %}
