@@ -4,10 +4,10 @@ An Flask app using MongoDB as database for movie theatres, shows and movie ticke
 
 # Tools and Technologies used :
 
-Python
-MongoDB
-Flask Framework
-Html 
-Css
-Javascript
-Bootstrap
+1.Python
+2.MongoDB
+3.Flask Framework
+4.Html 
+5.Css
+6.Javascript
+7.Bootstrap
